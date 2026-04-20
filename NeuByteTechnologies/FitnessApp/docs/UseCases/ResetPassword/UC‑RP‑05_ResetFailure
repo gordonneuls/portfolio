@@ -1,0 +1,144 @@
+# UC‑RP‑05 — Reset Failure
+Use Case ID
+UC‑RP‑05
+Use Case Name
+Reset Failure
+Module
+Reset Password
+## Purpose
+To define how the system responds when a password reset attempt fails due to invalid input, expired or invalid tokens, system errors, or security violations. This UC ensures the user receives clear guidance on what went wrong and how to proceed, while the system maintains strong security and audit controls.
+This is the failure counterpart to UC‑RP‑03_ResetPassword and UC‑RP‑04_ResetSuccess.
+## Primary Actor
+Unauthenticated User
+## Stakeholders & Interests
+• 	User — wants to understand why the reset failed and how to fix it.
+• 	System — must prevent invalid or insecure password resets.
+• 	Security Team — requires strict handling of expired, invalid, or tampered tokens.
+• 	Product Owner — wants predictable, user‑friendly error handling.
+• 	UX/UI Team — requires consistent error messaging and navigation patterns.
+
+## Preconditions
+• 	User is not authenticated.
+• 	User is attempting to reset their password (UC‑RP‑03).
+• 	Reset token exists but may be invalid, expired, or compromised.
+
+## Postconditions
+Success (Handled Failure)
+• 	System displays a clear error message.
+• 	User is guided to retry or request a new reset link.
+• 	System logs the failure for auditing.
+Failure (Unhandled Failure)
+• 	System logs the event.
+• 	User may see a generic fallback message.
+
+## Trigger
+A password reset attempt fails due to invalid input, token issues, or system errors.
+
+## Main Failure Scenario (Basic Flow — Reset Failure)
+1. 	User submits the Reset Password form.
+(UC‑RP‑03)
+2. 	System attempts to validate the reset token.
+(UC‑RP‑02)
+3. 	System detects a failure condition, such as:
+• 	Token expired
+• 	Token invalid
+• 	Token already used
+• 	Token tampered with
+• 	Password validation failure
+• 	System error
+(BR‑RP‑07, BR‑SEC‑08)
+4. 	System stops the reset process.
+5. 	System displays the Reset Failure screen, including:
+• 	Clear error message
+• 	Explanation (if appropriate)
+• 	“Request New Reset Link” button
+• 	“Return to Login” option
+(UIS‑RP‑05)
+6. 	System logs the failure event.
+(SRS‑LOG‑01)
+7. 	User chooses to retry or request a new reset link.
+
+## Alternate Flows
+A1 — Password Validation Failure
+• 	Password does not meet complexity requirements.
+• 	System displays specific validation messages.
+• 	User corrects input and retries.
+A2 — Passwords Do Not Match
+• 	System displays:
+“Passwords do not match.”
+• 	User corrects input.
+A3 — Token Expired
+• 	System displays:
+“Your reset link has expired. Please request a new one.”
+• 	User is directed to UC‑RP‑01_RequestReset.
+A4 — Token Already Used
+• 	System displays:
+“This reset link has already been used.”
+• 	User is directed to request a new link.
+A5 — Token Invalid
+• 	System displays:
+“Invalid reset link.”
+• 	User is directed to UC‑RP‑01.
+
+## Exception Flows
+E1 — Token Tampered With
+• 	System detects signature mismatch or hash failure.
+• 	System displays a generic error message.
+• 	System logs a security alert.
+(SRS‑SEC‑05)
+E2 — Database Update Failure
+• 	System cannot update the password.
+• 	System displays:
+“Unable to update your password. Please try again later.”
+• 	System logs the failure.
+E3 — Service Outage
+• 	System cannot validate token or update password due to service unavailability.
+• 	System displays a fallback error message.
+• 	User may retry later.
+E4 — Rate Limit Exceeded
+• 	User has attempted too many resets.
+• 	System displays:
+“Too many attempts. Please try again later.”
+• 	System logs the rate‑limit event.
+(BR‑SEC‑09)
+
+## Non‑Functional Requirements
+• 	Security:
+• 	No sensitive details in error messages.
+• 	All failures must be logged.
+• 	Token tampering must trigger alerts.
+• 	Performance:
+• 	Failure state must display within 150ms after detection.
+• 	Accessibility:
+• 	Error messages must be screen‑reader friendly.
+• 	Usability:
+• 	Messaging must clearly guide the user to the next step.
+• 	Consistency:
+• 	Error handling must follow global UI patterns.
+
+## Related UI Screens
+• 	UIS‑RP‑03 — Reset Password Screen
+• 	UIS‑RP‑04 — Reset Success Screen
+• 	UIS‑RP‑05 — Reset Failure Screen
+• 	UIS‑LOGIN‑01 — Login Screen
+
+## Flowchart TD
+
+    A[User Submits Reset Form] --> B[Validate Token]
+    B --> C{Token Valid?}
+
+    C -->|No| D[Display Reset Failure Screen]
+    D --> E[Log Failure]
+    E --> F[User Requests New Link or Returns to Login]
+    F --> END
+
+    C -->|Yes| G[Validate Password]
+    G --> H{Password Valid?}
+
+    H -->|No| D
+    H -->|Yes| I[Attempt Password Update]
+
+    I --> J{Update Successful?}
+    J -->|No| D
+    J -->|Yes| K[Proceed to Reset Success (UC-RP-04)]
+    K --> END
