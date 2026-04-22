@@ -12,25 +12,25 @@ To allow an authenticated user to view details of a previously logged workout fr
 ## Primary Actor
 Authenticated User
 Stakeholders & Interests
-• 	User — wants to quickly review or correct previously logged workout entries.
-• 	System — must retrieve accurate workout log data and allow safe editing.
-• 	Product Owner — wants a smooth, intuitive drill‑down experience from Dashboard → Activity Detail → Edit Log.
-• 	Analytics Team — needs to track activity drill‑down events.
-• 	Security Team — requires access control and data integrity.
+- 	User — wants to quickly review or correct previously logged workout entries.
+- 	System — must retrieve accurate workout log data and allow safe editing.
+- 	Product Owner — wants a smooth, intuitive drill‑down experience from Dashboard → Activity Detail → Edit Log.
+- 	Analytics Team — needs to track activity drill‑down events.
+- 	Security Team — requires access control and data integrity.
 
 ## Preconditions
-• 	User is authenticated.
-• 	User is on the Dashboard page.
-• 	At least one workout entry exists in Recent Activity (or fallback messaging is available).
-• 	System can retrieve workout log details.
+- 	User is authenticated.
+- 	User is on the Dashboard page.
+- 	At least one workout entry exists in Recent Activity (or fallback messaging is available).
+- 	System can retrieve workout log details.
 
 ## Postconditions
 Success
-• 	User views the selected workout’s details.
-• 	User may optionally edit the workout entry via UC‑LW‑02 (Edit Log).
+- 	User views the selected workout’s details.
+- 	User may optionally edit the workout entry via UC‑LW‑02 (Edit Log).
 Failure
-• 	User remains on the Dashboard.
-• 	System displays an error message if the workout entry cannot be retrieved.
+- 	User remains on the Dashboard.
+- 	System displays an error message if the workout entry cannot be retrieved.
 
 ## Trigger
 User selects a workout entry from the Recent Activity list on the Dashboard.
@@ -43,10 +43,10 @@ User selects a workout entry from the Recent Activity list on the Dashboard.
 3. 	System retrieves the selected workout log details.
 (DATA‑WorkoutLog.*)
 4. 	System displays the Activity Detail view, including:
-• 	Date
-• 	Exercises
-• 	Sets, reps, weight, duration
-• 	Total volume and duration
+- 	Date
+- 	Exercises
+- 	Sets, reps, weight, duration
+- 	Total volume and duration
 (FS‑DASH‑ACT‑02)
 5. 	System provides an Edit option for the workout entry.
 (BR‑DASH‑11)
@@ -59,37 +59,37 @@ User selects a workout entry from the Recent Activity list on the Dashboard.
 
 ## Alternate Flows
 A1 — No Recent Activity Available
-• 	Step 1 cannot occur.
-• 	System displays an empty state message.
+- 	Step 1 cannot occur.
+- 	System displays an empty state message.
 (BR‑DASH‑10 fallback)
 A2 — User Views Activity but Does Not Edit
-• 	Steps 1–4 occur.
-• 	User closes the Activity Detail view.
-• 	System returns user to the Dashboard.
+- 	Steps 1–4 occur.
+- 	User closes the Activity Detail view.
+- 	System returns user to the Dashboard.
 
 ## Exception Flows
 E1 — Authentication Failure
-• 	Step 2 fails.
-• 	System redirects user to Login page.
+- 	Step 2 fails.
+- 	System redirects user to Login page.
 (BR‑DASH‑22)
 E2 — Workout Log Retrieval Error
-• 	Step 3 fails due to missing/corrupted data or system error.
-• 	System displays an error message.
+- 	Step 3 fails due to missing/corrupted data or system error.
+- 	System displays an error message.
 (BR‑DASH‑18)
-• 	User remains on the Dashboard.
+- 	User remains on the Dashboard.
 
 ## Non‑Functional Requirements
-• 	Security: Only authenticated users may view or edit activity. (BR‑DASH‑22)
-• 	Performance: Activity detail must load quickly to maintain user flow.
-• 	Responsive UI: Activity detail and edit options must render correctly on all device sizes. (BR‑DASH‑14)
-• 	Accessibility: Activity list and detail view must support keyboard navigation and screen readers. (SRS‑A11Y‑01)
-• 	Analytics: Activity drill‑down events must be logged. (BR‑DASH‑23)
+- 	Security: Only authenticated users may view or edit activity. (BR‑DASH‑22)
+- 	Performance: Activity detail must load quickly to maintain user flow.
+- 	Responsive UI: Activity detail and edit options must render correctly on all device sizes. (BR‑DASH‑14)
+- 	Accessibility: Activity list and detail view must support keyboard navigation and screen readers. (SRS‑A11Y‑01)
+- 	Analytics: Activity drill‑down events must be logged. (BR‑DASH‑23)
 
 ## Related UI Screens
-• 	UIS‑DASH‑06 — Recent Activity List
-• 	UIS‑LW‑03 — Edit Log Modal
-• 	UIS‑GLOBAL‑HEADER‑01
-• 	UIS‑GLOBAL‑FOOTER‑01
+- 	UIS‑DASH‑06 — Recent Activity List
+- 	UIS‑LW‑03 — Edit Log Modal
+- 	UIS‑GLOBAL‑HEADER‑01
+- 	UIS‑GLOBAL‑FOOTER‑01
 
 ## flowchart TD
 

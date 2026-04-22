@@ -12,25 +12,25 @@ To allow an authenticated user to begin their scheduled workout for the current 
 ## Primary Actor
 Authenticated User
 Stakeholders & Interests
-• 	User — wants to begin today’s workout quickly and seamlessly.
-• 	System — must load the correct workout for the current day and ensure data integrity.
-• 	Product Owner — wants a smooth transition from dashboard to workout logging.
-• 	Security Team — requires that only authenticated users can start a workout.
-• 	Analytics Team — needs to track workout start events.
+- 	User — wants to begin today’s workout quickly and seamlessly.
+- 	System — must load the correct workout for the current day and ensure data integrity.
+- 	Product Owner — wants a smooth transition from dashboard to workout logging.
+- 	Security Team — requires that only authenticated users can start a workout.
+- 	Analytics Team — needs to track workout start events.
 
 ## Preconditions
-• 	User is authenticated.
-• 	User is on the Dashboard page.
-• 	A workout is scheduled for the current day (or appropriate fallback messaging is available).
-• 	System can retrieve workout plan data.
+- 	User is authenticated.
+- 	User is on the Dashboard page.
+- 	A workout is scheduled for the current day (or appropriate fallback messaging is available).
+- 	System can retrieve workout plan data.
 
 ## Postconditions
 Success
-• 	User is navigated to the Log Workout workflow.
-• 	System loads the correct workout for the current day.
+- 	User is navigated to the Log Workout workflow.
+- 	System loads the correct workout for the current day.
 Failure
-• 	User remains on the Dashboard page.
-• 	System displays an error message if the workout cannot be retrieved.
+- 	User remains on the Dashboard page.
+- 	System displays an error message if the workout cannot be retrieved.
 
 ## Trigger
 User selects the “Start Workout” button from the Dashboard.
@@ -53,39 +53,39 @@ Main Success Scenario (Basic Flow)
 
 ## Alternate Flows
 A1 — No Workout Scheduled for Today
-• 	Step 4 fails.
-• 	System displays a message indicating no workout is scheduled.
+- 	Step 4 fails.
+- 	System displays a message indicating no workout is scheduled.
 (BR‑DASH‑08 fallback behavior)
-• 	User remains on the Dashboard.
+- 	User remains on the Dashboard.
 A2 — Workout Data Missing or Corrupted
-• 	Step 3 or 4 fails.
-• 	System displays an error message.
+- 	Step 3 or 4 fails.
+- 	System displays an error message.
 (BR‑DASH‑20)
-• 	User remains on the Dashboard.
+- 	User remains on the Dashboard.
 
 ## Exception Flows
 E1 — Authentication Failure
-• 	Step 2 fails.
-• 	System redirects user to Login page.
+- 	Step 2 fails.
+- 	System redirects user to Login page.
 (BR‑DASH‑22)
 E2 — System/Database Error
-• 	Step 3 fails due to backend or network issue.
-• 	System displays a system error message.
+- 	Step 3 fails due to backend or network issue.
+- 	System displays a system error message.
 (BR‑DASH‑20)
-• 	No navigation occurs.
+- 	No navigation occurs.
 
 ## Non‑Functional Requirements
-• 	Security: Only authenticated users may start a workout. (BR‑DASH‑22)
-• 	Performance: Workout plan retrieval must be fast to avoid user friction.
-• 	Responsive UI: Start Workout button must be accessible on all device sizes. (BR‑DASH‑14)
-• 	Accessibility: Button must support keyboard navigation and screen readers. (SRS‑A11Y‑01)
-• 	Analytics: Workout start events must be logged. (SRS‑LOG‑01)
+- 	Security: Only authenticated users may start a workout. (BR‑DASH‑22)
+- 	Performance: Workout plan retrieval must be fast to avoid user friction.
+- 	Responsive UI: Start Workout button must be accessible on all device sizes. (BR‑DASH‑14)
+- 	Accessibility: Button must support keyboard navigation and screen readers. (SRS‑A11Y‑01)
+- 	Analytics: Workout start events must be logged. (SRS‑LOG‑01)
 
 ## Related UI Screens
-• 	UIS‑DASH‑05 — Today’s Workout Card
-• 	UIS‑LW‑01 — Log Workout Page
-• 	UIS‑GLOBAL‑HEADER‑01
-• 	UIS‑GLOBAL‑FOOTER‑01
+- 	UIS‑DASH‑05 — Today’s Workout Card
+- 	UIS‑LW‑01 — Log Workout Page
+- 	UIS‑GLOBAL‑HEADER‑01
+- 	UIS‑GLOBAL‑FOOTER‑01
 
 ## flowchart TD
 
