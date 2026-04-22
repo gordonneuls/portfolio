@@ -12,28 +12,28 @@ Authenticated User
 ## Secondary Actor
 System
 ## Stakeholders & Interests
-• 	User — wants a quick way to remove all notifications and start fresh.
-• 	System — must securely delete all notifications and maintain data integrity.
-• 	Product Owner — wants a clean, intuitive notification management experience.
-• 	UX/UI Team — requires predictable behavior and confirmation patterns.
-• 	Security Team — ensures users can only clear their own notifications.
-• 	Analytics Team — tracks bulk deletion events for engagement insights.
+-	User — wants a quick way to remove all notifications and start fresh.
+-	System — must securely delete all notifications and maintain data integrity.
+-	Product Owner — wants a clean, intuitive notification management experience.
+-	UX/UI Team — requires predictable behavior and confirmation patterns.
+-	Security Team — ensures users can only clear their own notifications.
+-	Analytics Team — tracks bulk deletion events for engagement insights.
 
 ## Preconditions
-• 	User is authenticated.
-• 	Notification list is visible (UC‑NOTE‑01).
-• 	At least one notification exists for the user.
-• 	Notification service is operational.
+-	User is authenticated.
+-	Notification list is visible (UC‑NOTE‑01).
+-	At least one notification exists for the user.
+-	Notification service is operational.
 
 ## Postconditions
 Success
-• 	All notifications belonging to the user are permanently deleted.
-• 	Notification list becomes empty.
-• 	Unread count is set to zero.
-• 	System logs the bulk deletion event.
+-	All notifications belonging to the user are permanently deleted.
+-	Notification list becomes empty.
+-	Unread count is set to zero.
+-	System logs the bulk deletion event.
 Failure
-• 	Notifications remain unchanged.
-• 	System may display an error message.
+-	Notifications remain unchanged.
+-	System may display an error message.
 
 ## Trigger
 User selects the Clear All action from the Notification Center.
@@ -56,46 +56,46 @@ User selects the Clear All action from the Notification Center.
 
 ## Alternate Flows
 A1 — Confirmation Dialog (Recommended UX)
-• 	System displays a confirmation dialog:
+-	System displays a confirmation dialog:
 “Are you sure you want to clear all notifications? This action cannot be undone.”
-• 	User selects Yes → continue Basic Flow.
-• 	User selects No → cancel operation.
+-	User selects Yes → continue Basic Flow.
+-	User selects No → cancel operation.
 A2 — No Notifications to Clear
-• 	Step 4 returns zero notifications.
-• 	System returns a success response.
-• 	UI displays the empty state message.
+-	Step 4 returns zero notifications.
+-	System returns a success response.
+-	UI displays the empty state message.
 (BR‑N‑12)
 A3 — Partial Deletion (Optional Future Feature)
 If the system supports retention rules:
-• 	System deletes only eligible notifications.
-• 	System returns a partial success response.
-• 	UI updates accordingly.
+-	System deletes only eligible notifications.
+-	System returns a partial success response.
+-	UI updates accordingly.
 
 ## Exception Flows
 E1 — Data Store Failure
-• 	System cannot delete notifications.
-• 	System returns an error:
+-	System cannot delete notifications.
+-	System returns an error:
 “Unable to clear notifications. Please try again.”
-• 	Notifications remain visible.
+-	Notifications remain visible.
 E2 — Unauthorized Access Attempt
-• 	User attempts to clear notifications belonging to another user.
-• 	System blocks the request and logs a security event.
+-	User attempts to clear notifications belonging to another user.
+-	System blocks the request and logs a security event.
 (BR‑N‑15)
 E3 — Network Timeout
-• 	System cannot complete the request.
-• 	UI may retry or display a fallback message.
+-	System cannot complete the request.
+-	UI may retry or display a fallback message.
 
 ## Non‑Functional Requirements
-• 	Performance: Bulk deletion must complete within 250ms.
-• 	Security: Only the owner may clear their notifications.
-• 	Reliability: Operation must be atomic — either all notifications are deleted or none.
-• 	Data Integrity: Unread count must be recalculated accurately.
-• 	Auditability: Bulk deletion events must be logged.
-• 	Accessibility: Clear All action must be keyboard‑accessible and screen‑reader friendly.
+-	Performance: Bulk deletion must complete within 250ms.
+-	Security: Only the owner may clear their notifications.
+-	Reliability: Operation must be atomic — either all notifications are deleted or none.
+-	Data Integrity: Unread count must be recalculated accurately.
+-	Auditability: Bulk deletion events must be logged.
+-	Accessibility: Clear All action must be keyboard‑accessible and screen‑reader friendly.
 
 ## Related UI Screens
-• 	UIS‑NOTE‑01 — Notification List
-• 	UIS‑GLOBAL‑HEADER‑01 — Notification Icon
+-	UIS‑NOTE‑01 — Notification List
+-	UIS‑GLOBAL‑HEADER‑01 — Notification Icon
 
 ## Flowchart TD
 
