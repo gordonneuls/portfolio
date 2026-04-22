@@ -1,0 +1,29 @@
+:root {
+  /* Office Default Colors */
+  --color-text: #000000;
+  --color-background: #ffffff;
+
+  --color-accent-1: #4472c4;
+  --color-accent-2: #ed7d31;
+  --color-accent-3: #a5a5a5;
+  --color-accent-4: #ffc000;
+  --color-accent-5: #5b9bd5;
+  --color-accent-6: #70ad47;
+
+  /* Fonts */
+  font-family: "Istok Web", "Open Sans", "Manrope", Arial, sans-serif;
+  font-heading: "Calibri Light", sans-serif;
+  ont-body: "Calibri", sans-serif;
+}
+
+body {
+  font-family: var(--font-body);
+  color: var(--color-text);
+  background: var(--color-background);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  color: var(--color-accent-1);
+}
+
