@@ -12,27 +12,27 @@ To define how the user logs out of the application using the hamburger menu. Thi
 ## Primary Actor
 Authenticated User
 ## Stakeholders & Interests
-• 	User — wants a clear, reliable way to end their session.
-• 	System — must terminate the session securely and consistently.
-• 	Product Owner — wants predictable logout behavior across all devices.
-• 	Security Team — requires proper session invalidation and prevention of unauthorized reuse.
-• 	UX/UI Team — requires smooth transitions and accessibility compliance.
+-	User — wants a clear, reliable way to end their session.
+-	System — must terminate the session securely and consistently.
+-	Product Owner — wants predictable logout behavior across all devices.
+-	Security Team — requires proper session invalidation and prevention of unauthorized reuse.
+-	UX/UI Team — requires smooth transitions and accessibility compliance.
 
 ## Preconditions
-• 	User is authenticated.
-• 	Menu panel is open.
-• 	Logout menu item is visible and enabled.
+-	User is authenticated.
+-	Menu panel is open.
+-	Logout menu item is visible and enabled.
 
 ## Postconditions
 Success
-• 	Menu closes.
-• 	User session is terminated.
-• 	User is redirected to the Login page.
-• 	All session tokens/cookies are invalidated.
-• 	Sensitive data is cleared from memory/UI.
+-	Menu closes.
+-	User session is terminated.
+-	User is redirected to the Login page.
+-	All session tokens/cookies are invalidated.
+-	Sensitive data is cleared from memory/UI.
 Failure
-• 	User remains authenticated.
-• 	System may display an error message if logout fails.
+-	User remains authenticated.
+-	System may display an error message if logout fails.
 
 ## Trigger
 User taps or selects the Logout menu item.
@@ -54,41 +54,41 @@ User taps or selects the Logout menu item.
 
 ## Alternate Flows
 A1 — User Selects Logout via Keyboard
-• 	User navigates to the Logout menu item using Tab.
-• 	User presses Enter or Space.
-• 	System performs the same steps as the Basic Flow.
+-	User navigates to the Logout menu item using Tab.
+-	User presses Enter or Space.
+-	System performs the same steps as the Basic Flow.
 A2 — Logout Confirmation (Optional Feature)
 If the product owner enables confirmation:
-• 	System displays a confirmation dialog:
+-	System displays a confirmation dialog:
 “Are you sure you want to log out?”
-• 	User selects Yes → continue Basic Flow.
-• 	User selects No → menu remains open.
+-	User selects Yes → continue Basic Flow.
+-	User selects No → menu remains open.
 
 ## Exception Flows
 E1 — Logout Service Failure
-• 	System attempts to terminate the session but encounters an error.
-• 	System displays a fallback message:
+-	System attempts to terminate the session but encounters an error.
+-	System displays a fallback message:
 “Unable to log out. Please try again.”
-• 	System logs the failure.
-• 	User remains authenticated.
+-	System logs the failure.
+-	User remains authenticated.
 E2 — Network Failure During Logout
-• 	Client cannot reach the server to invalidate the session.
-• 	System clears local tokens but warns the user:
+-	Client cannot reach the server to invalidate the session.
+-	System clears local tokens but warns the user:
 “Logout may not have completed on the server.”
-• 	System still redirects to Login.
+-	System still redirects to Login.
 
 ## Non‑Functional Requirements
-• 	Security: Logout must fully invalidate server‑side and client‑side sessions.
-• 	Performance: Logout must complete within 500ms.
-• 	Accessibility: Logout must be keyboard‑accessible and screen‑reader friendly.
-• 	Consistency: Logout behavior must match explicit logout and timeout logout flows.
-• 	Reliability: Logout must succeed even under degraded network conditions.
+-	Security: Logout must fully invalidate server‑side and client‑side sessions.
+-	Performance: Logout must complete within 500ms.
+-	Accessibility: Logout must be keyboard‑accessible and screen‑reader friendly.
+-	Consistency: Logout behavior must match explicit logout and timeout logout flows.
+-	Reliability: Logout must succeed even under degraded network conditions.
 
 ## Related UI Screens
-• 	UIS‑MENU‑01 — Side Navigation Panel
-• 	UIS‑LOGIN‑01 — Login Page
-• 	UIS‑GLOBAL‑HEADER‑01
-• 	UIS‑GLOBAL‑FOOTER‑01
+-	UIS‑MENU‑01 — Side Navigation Panel
+-	UIS‑LOGIN‑01 — Login Page
+-	UIS‑GLOBAL‑HEADER‑01
+-	UIS‑GLOBAL‑FOOTER‑01
 
 ## Flowchart TD
 

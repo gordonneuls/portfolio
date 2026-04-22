@@ -12,26 +12,26 @@ To define how the user navigates from the hamburger menu to the Weight Tracking 
 ## Primary Actor
 Authenticated User
 ## Stakeholders & Interests
-• 	User — wants quick access to view or update weight entries and trends.
-• 	System — must route the user correctly and close the menu.
-• 	Product Owner — wants seamless navigation to a core progress‑tracking feature.
-• 	UX/UI Team — requires smooth transitions and accessibility compliance.
-• 	Security Team — ensures weight data is only accessible to authenticated users.
+-	User — wants quick access to view or update weight entries and trends.
+-	System — must route the user correctly and close the menu.
+-	Product Owner — wants seamless navigation to a core progress‑tracking feature.
+-	UX/UI Team — requires smooth transitions and accessibility compliance.
+-	Security Team — ensures weight data is only accessible to authenticated users.
 
 ## Preconditions
-• 	User is authenticated.
-• 	Menu panel is open.
-• 	Weight Tracking menu item is visible and enabled.
+-	User is authenticated.
+-	Menu panel is open.
+-	Weight Tracking menu item is visible and enabled.
 
 ## Postconditions
 Success
-• 	Menu closes.
-• 	User is routed to the Weight Tracking module.
-• 	Weight entries and trend data load successfully.
-• 	Focus is placed at the top of the Weight Tracking screen for accessibility.
+-	Menu closes.
+-	User is routed to the Weight Tracking module.
+-	Weight entries and trend data load successfully.
+-	Focus is placed at the top of the Weight Tracking screen for accessibility.
 Failure
-• 	User remains on the current screen.
-• 	System may display an error message if routing or data loading fails.
+-	User remains on the current screen.
+-	System may display an error message if routing or data loading fails.
 
 ## Trigger
 User taps or selects the Weight Tracking menu item.
@@ -53,38 +53,38 @@ User taps or selects the Weight Tracking menu item.
 
 ## Alternate Flows
 A1 — User Selects Weight Tracking via Keyboard
-• 	User navigates to the Weight Tracking menu item using Tab.
-• 	User presses Enter or Space.
-• 	System performs the same steps as the Basic Flow.
+-	User navigates to the Weight Tracking menu item using Tab.
+-	User presses Enter or Space.
+-	System performs the same steps as the Basic Flow.
 A2 — Already on Weight Tracking Screen
-• 	User selects Weight Tracking while already viewing the Weight Tracking page.
-• 	System still closes the menu.
-• 	System may refresh weight data (optional per BR‑WT‑15).
-• 	User remains on the Weight Tracking screen.
+-	User selects Weight Tracking while already viewing the Weight Tracking page.
+-	System still closes the menu.
+-	System may refresh weight data (optional per BR‑WT‑15).
+-	User remains on the Weight Tracking screen.
 
 ## Exception Flows
 E1 — Routing Failure
-• 	System cannot navigate to the Weight Tracking screen due to a routing or network error.
-• 	System displays a fallback message:
+-	System cannot navigate to the Weight Tracking screen due to a routing or network error.
+-	System displays a fallback message:
 “Unable to load Weight Tracking. Please try again.”
-• 	System logs the error.
+-	System logs the error.
 E2 — Weight Data Load Failure
-• 	System navigates successfully but fails to load weight data.
-• 	System displays placeholders or error states.
-• 	System logs the failure.
+-	System navigates successfully but fails to load weight data.
+-	System displays placeholders or error states.
+-	System logs the failure.
 
 ## Non‑Functional Requirements
-• 	Performance: Weight Tracking must load within 1 second on modern devices.
-• 	Accessibility: Menu item must be keyboard‑navigable and screen‑reader friendly.
-• 	Responsiveness: Navigation must work consistently across mobile, tablet, and desktop.
-• 	Consistency: Behavior must match all other menu navigation UCs.
-• 	Security: Weight Tracking must only be accessible to authenticated users.
+-	Performance: Weight Tracking must load within 1 second on modern devices.
+-	Accessibility: Menu item must be keyboard‑navigable and screen‑reader friendly.
+-	Responsiveness: Navigation must work consistently across mobile, tablet, and desktop.
+-	Consistency: Behavior must match all other menu navigation UCs.
+-	Security: Weight Tracking must only be accessible to authenticated users.
 
 ## Related UI Screens
-• 	UIS‑MENU‑01 — Side Navigation Panel
-• 	UIS‑WT‑01 — Weight Tracking Page
-• 	UIS‑GLOBAL‑HEADER‑01
-• 	UIS‑GLOBAL‑FOOTER‑01
+-	UIS‑MENU‑01 — Side Navigation Panel
+-	UIS‑WT‑01 — Weight Tracking Page
+-	UIS‑GLOBAL‑HEADER‑01
+-	UIS‑GLOBAL‑FOOTER‑01
 
 ## Flowchart TD
 

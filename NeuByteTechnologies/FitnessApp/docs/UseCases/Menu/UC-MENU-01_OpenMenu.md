@@ -13,25 +13,25 @@ To define how the user opens the hamburger menu from any authenticated screen. T
 ## Primary Actor
 Authenticated User
 ## Stakeholders & Interests
-• 	User — wants quick, predictable access to global navigation options.
-• 	System — must display the menu consistently and responsively.
-• 	Product Owner — wants intuitive navigation with minimal friction.
-• 	UX/UI Team — requires smooth animation, accessibility compliance, and consistent placement.
-• 	Security Team — ensures menu is only available to authenticated users.
+-	User — wants quick, predictable access to global navigation options.
+-	System — must display the menu consistently and responsively.
+-	Product Owner — wants intuitive navigation with minimal friction.
+-	UX/UI Team — requires smooth animation, accessibility compliance, and consistent placement.
+-	Security Team — ensures menu is only available to authenticated users.
 
 ## Preconditions
-• 	User is authenticated.
-• 	User is on any screen where the hamburger menu icon is visible.
-• 	Menu panel is currently closed.
+-	User is authenticated.
+-	User is on any screen where the hamburger menu icon is visible.
+-	Menu panel is currently closed.
 
 ## Postconditions
 Success
-• 	Menu panel is fully opened.
-• 	Navigation options are visible and interactive.
-• 	Focus is moved to the first actionable menu item (for accessibility).
+-	Menu panel is fully opened.
+-	Navigation options are visible and interactive.
+-	Focus is moved to the first actionable menu item (for accessibility).
 Failure
-• 	Menu remains closed.
-• 	User receives an error message only if a system failure occurs (rare).
+-	Menu remains closed.
+-	User receives an error message only if a system failure occurs (rare).
 
 ## Trigger
 User taps or clicks the hamburger menu icon in the global header.
@@ -53,36 +53,36 @@ User taps or clicks the hamburger menu icon in the global header.
 
 ## Alternate Flows
 A1 — User Opens Menu via Keyboard
-• 	User presses Tab until the menu icon is focused.
-• 	User presses Enter or Space.
-• 	System opens the menu (same as Basic Flow).
+-	User presses Tab until the menu icon is focused.
+-	User presses Enter or Space.
+-	System opens the menu (same as Basic Flow).
 A2 — Menu Already Open
-• 	User taps the menu icon while the menu is open.
-• 	System interprets this as a close action.
-• 	System triggers UC‑MENU‑02 Close Menu.
+-	User taps the menu icon while the menu is open.
+-	System interprets this as a close action.
+-	System triggers UC‑MENU‑02 Close Menu.
 
 ## Exception Flows
 E1 — Menu Component Fails to Load
-• 	System cannot render the menu panel.
-• 	System displays a fallback error message:
+-	System cannot render the menu panel.
+-	System displays a fallback error message:
 “Menu unavailable. Please navigate using on‑screen links.”
-• 	System logs the UI failure.
+-	System logs the UI failure.
 E2 — Animation Failure
-• 	Animation library fails or is disabled.
-• 	System displays menu instantly without animation.
-• 	User may continue normally.
+-	Animation library fails or is disabled.
+-	System displays menu instantly without animation.
+-	User may continue normally.
 
 ## Non‑Functional Requirements
-• 	Performance: Menu must open within 150ms on modern devices.
-• 	Accessibility: Menu must be fully navigable via keyboard and screen readers.
-• 	Responsiveness: Menu must adapt to mobile, tablet, and desktop layouts.
-• 	Consistency: Menu behavior must be identical across all authenticated screens.
-• 	Security: Menu must not appear for unauthenticated users.
+-	Performance: Menu must open within 150ms on modern devices.
+-	Accessibility: Menu must be fully navigable via keyboard and screen readers.
+-	Responsiveness: Menu must adapt to mobile, tablet, and desktop layouts.
+-	Consistency: Menu behavior must be identical across all authenticated screens.
+-	Security: Menu must not appear for unauthenticated users.
 
 ## Related UI Screens
-• 	UIS‑GLOBAL‑HEADER‑01 — Header with Hamburger Icon
-• 	UIS‑MENU‑01 — Side Navigation Panel
-• 	UIS‑GLOBAL‑FOOTER‑01
+-	UIS‑GLOBAL‑HEADER‑01 — Header with Hamburger Icon
+-	UIS‑MENU‑01 — Side Navigation Panel
+-	UIS‑GLOBAL‑FOOTER‑01
 
 ## Flowchart TD
 
