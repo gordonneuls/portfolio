@@ -13,27 +13,27 @@ To allow an authenticated user to activate a selected exercise program, making i
 ## Primary Actor
 Authenticated User
 ## Stakeholders & Interests
-• 	User — wants to begin a structured program and track progress from day one.
-• 	System — must correctly assign the program, initialize progress, and prevent conflicts.
-• 	Product Owner — wants a smooth, confident activation experience with clear confirmation.
-• 	Analytics Team — needs to track program activation events.
-• 	Security Team — requires that only authenticated users can activate programs.
+- 	User — wants to begin a structured program and track progress from day one.
+- 	System — must correctly assign the program, initialize progress, and prevent conflicts.
+- 	Product Owner — wants a smooth, confident activation experience with clear confirmation.
+- 	Analytics Team — needs to track program activation events.
+- 	Security Team — requires that only authenticated users can activate programs.
 
 ## Preconditions
-• 	User is authenticated.
-• 	User is viewing a Program Detail page (UC‑EP‑02).
-• 	System can retrieve and update user program assignment data.
-• 	User does not already have an active program OR system supports mid‑cycle switching (UC‑EP‑06).
+- 	User is authenticated.
+- 	User is viewing a Program Detail page (UC‑EP‑02).
+- 	System can retrieve and update user program assignment data.
+- 	User does not already have an active program OR system supports mid‑cycle switching (UC‑EP‑06).
 
 ## Postconditions
 Success
-• 	The selected program becomes the user’s active program.
-• 	Program progress is initialized (Week 1, Day 1).
-• 	User is redirected to the Dashboard or Program Overview.
+- 	The selected program becomes the user’s active program.
+- 	Program progress is initialized (Week 1, Day 1).
+- 	User is redirected to the Dashboard or Program Overview.
 Failure
-• 	No program is activated.
-• 	System displays an error message.
-• 	User remains on the Program Detail page.
+- 	No program is activated.
+- 	System displays an error message.
+- 	User remains on the Program Detail page.
 
 ## Trigger
 User selects the Activate Program button on the Program Detail page.
@@ -48,9 +48,9 @@ User selects the Activate Program button on the Program Detail page.
 4. 	System retrieves the selected program’s structure (weeks, days).
 (BR‑EP‑02)
 5. 	System initializes program progress for the user:
-• 	Set active program ID
-• 	Set Week = 1
-• 	Set Day = 1
+- 	Set active program ID
+- 	Set Week = 1
+- 	Set Day = 1
 (BR‑EP‑04)
 6. 	System saves the user’s new active program assignment.
 (DATA‑ProgramProgress.*)
@@ -63,41 +63,41 @@ User selects the Activate Program button on the Program Detail page.
 
 ## Alternate Flows
 A1 — User Already Has an Active Program
-• 	Step 3 detects an existing active program.
-• 	System displays a message:
+- 	Step 3 detects an existing active program.
+- 	System displays a message:
 “Activating this program will replace your current program.”
 (BR‑EP‑08)
-• 	User confirms activation.
-• 	System continues at Step 4.
+- 	User confirms activation.
+- 	System continues at Step 4.
 A2 — User Cancels Activation
-• 	User declines the confirmation prompt.
-• 	No changes are made.
-• 	User remains on the Program Detail page.
+- 	User declines the confirmation prompt.
+- 	No changes are made.
+- 	User remains on the Program Detail page.
 
 ## Exception Flows
 E1 — Authentication Failure
-• 	Step 2 fails.
-• 	System redirects user to Login page.
+- 	Step 2 fails.
+- 	System redirects user to Login page.
 (BR‑EP‑05)
 E2 — Program Initialization Error
-• 	Step 5 or 6 fails due to system/database issue.
-• 	System displays an error message.
+- 	Step 5 or 6 fails due to system/database issue.
+- 	System displays an error message.
 (BR‑EP‑01 fallback)
-• 	No program is activated.
+- 	No program is activated.
 
 ## Non‑Functional Requirements
-• 	Security: Only authenticated users may activate programs. (BR‑EP‑05)
-• 	Performance: Activation must complete quickly.
-• 	Responsive UI: Activation button and confirmation modal must render correctly on all device sizes.
-• 	Accessibility: Activation controls must support keyboard navigation and screen readers. (SRS‑A11Y‑01)
-• 	Analytics: Program activation events must be logged.
+- 	Security: Only authenticated users may activate programs. (BR‑EP‑05)
+- 	Performance: Activation must complete quickly.
+- 	Responsive UI: Activation button and confirmation modal must render correctly on all device sizes.
+- 	Accessibility: Activation controls must support keyboard navigation and screen readers. (SRS‑A11Y‑01)
+- 	Analytics: Program activation events must be logged.
 
 ## Related UI Screens
-• 	UIS‑EP‑03 — Program Detail Page
-• 	UIS‑EP‑08 — Activation Confirmation Modal
-• 	UIS‑DASH‑01 — Dashboard
-• 	UIS‑GLOBAL‑HEADER‑01
-• 	UIS‑GLOBAL‑FOOTER‑01
+- 	UIS‑EP‑03 — Program Detail Page
+- 	UIS‑EP‑08 — Activation Confirmation Modal
+- 	UIS‑DASH‑01 — Dashboard
+- 	UIS‑GLOBAL‑HEADER‑01
+- 	UIS‑GLOBAL‑FOOTER‑01
 
 ## flowchart TD
 

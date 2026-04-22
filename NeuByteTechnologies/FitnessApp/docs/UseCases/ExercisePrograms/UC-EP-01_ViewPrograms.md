@@ -13,24 +13,24 @@ Authenticated User
 To allow an authenticated user to view all available exercise programs in a centralized list, enabling them to browse, compare, and select a program to activate or review. This use case provides the entry point into the Exercise Program module and ensures users can easily discover structured workout plans.
 
 ## Stakeholders & Interests
-• 	User — wants to browse available exercise programs and choose one that fits their goals.
-• 	System — must retrieve accurate program metadata and present it consistently.
-• 	Product Owner — wants a clean, intuitive program discovery experience.
-• 	Security Team — requires that only authenticated users can view program data.
-• 	Analytics Team — needs to track program list views and selections.
+- 	User — wants to browse available exercise programs and choose one that fits their goals.
+- 	System — must retrieve accurate program metadata and present it consistently.
+- 	Product Owner — wants a clean, intuitive program discovery experience.
+- 	Security Team — requires that only authenticated users can view program data.
+- 	Analytics Team — needs to track program list views and selections.
 
 ## Preconditions
-• 	User is authenticated.
-• 	User is on the Exercise Programs page or navigates to it from the Dashboard.
-• 	System can retrieve program metadata (name, duration, goals, difficulty).
+- 	User is authenticated.
+- 	User is on the Exercise Programs page or navigates to it from the Dashboard.
+- 	System can retrieve program metadata (name, duration, goals, difficulty).
 
 ## Postconditions
 Success
-• 	System displays a list of available exercise programs.
-• 	User may select a program to view details (UC‑EP‑02).
+- 	System displays a list of available exercise programs.
+- 	User may select a program to view details (UC‑EP‑02).
 Failure
-• 	System displays an empty state or error message if programs cannot be retrieved.
-• 	User remains on the Exercise Programs page.
+- 	System displays an empty state or error message if programs cannot be retrieved.
+- 	User remains on the Exercise Programs page.
 
 ## Trigger
 User navigates to the Exercise Programs page from the Dashboard or global menu.
@@ -43,10 +43,10 @@ User navigates to the Exercise Programs page from the Dashboard or global menu.
 3. 	System retrieves the list of available exercise programs.
 (BR‑EP‑01)
 4. 	System displays each program with:
-• 	Program name
-• 	Duration (weeks)
-• 	High‑level goals
-• 	Difficulty level
+- 	Program name
+- 	Duration (weeks)
+- 	High‑level goals
+- 	Difficulty level
 (BR‑EP‑02)
 5. 	System displays an option to select a program.
 (BR‑EP‑03)
@@ -58,37 +58,37 @@ User navigates to the Exercise Programs page from the Dashboard or global menu.
 
 ## Alternate Flows
 A1 — No Programs Available
-• 	Step 3 returns zero results.
-• 	System displays an empty state message.
+- 	Step 3 returns zero results.
+- 	System displays an empty state message.
 (BR‑EP‑01 fallback)
 A2 — User Views List but Does Not Select a Program
-• 	Steps 1–5 occur.
-• 	User leaves the page or navigates elsewhere.
-• 	No further action is taken.
+- 	Steps 1–5 occur.
+- 	User leaves the page or navigates elsewhere.
+- 	No further action is taken.
 
 ## Exception Flows
 E1 — Authentication Failure
-• 	Step 2 fails.
-• 	System redirects user to Login page.
+- 	Step 2 fails.
+- 	System redirects user to Login page.
 (BR‑EP‑05)
 E2 — Program Retrieval Error
-• 	Step 3 fails due to system/database issue.
-• 	System displays an error message.
+- 	Step 3 fails due to system/database issue.
+- 	System displays an error message.
 (BR‑EP‑01 fallback)
-• 	User remains on the Exercise Programs page.
+- 	User remains on the Exercise Programs page.
 
 ## Non‑Functional Requirements
-• 	Security: Only authenticated users may view programs. (BR‑EP‑05)
-• 	Performance: Program list must load quickly.
-• 	Responsive UI: Program cards must render correctly on all device sizes.
-• 	Accessibility: Program list must support keyboard navigation and screen readers. (SRS‑A11Y‑01)
-• 	Analytics: Program list view events must be logged.
+- 	Security: Only authenticated users may view programs. (BR‑EP‑05)
+- 	Performance: Program list must load quickly.
+- 	Responsive UI: Program cards must render correctly on all device sizes.
+- 	Accessibility: Program list must support keyboard navigation and screen readers. (SRS‑A11Y‑01)
+- 	Analytics: Program list view events must be logged.
 
 ## Related UI Screens
-• 	UIS‑EP‑01 — Program List Page
-• 	UIS‑EP‑02 — Program Card Layout
-• 	UIS‑GLOBAL‑HEADER‑01
-• 	UIS‑GLOBAL‑FOOTER‑01
+- 	UIS‑EP‑01 — Program List Page
+- 	UIS‑EP‑02 — Program Card Layout
+- 	UIS‑GLOBAL‑HEADER‑01
+- 	UIS‑GLOBAL‑FOOTER‑01
 
 ## flowchart TD
 

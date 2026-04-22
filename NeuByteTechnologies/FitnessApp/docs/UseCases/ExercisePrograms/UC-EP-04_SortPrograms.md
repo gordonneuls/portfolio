@@ -13,23 +13,23 @@ To allow an authenticated user to sort the list of available exercise programs b
 ## Primary Actor
 Authenticated User
 ## Stakeholders & Interests
-• 	User — wants to easily reorder programs to find the most relevant options.
-• 	System — must apply sorting accurately and efficiently.
-• 	Product Owner — wants a smooth, intuitive sorting experience that complements filtering.
-• 	Analytics Team — needs to track sorting behavior to understand user preferences.
-• 	Security Team — requires that only authenticated users can view program data.
+- 	User — wants to easily reorder programs to find the most relevant options.
+- 	System — must apply sorting accurately and efficiently.
+- 	Product Owner — wants a smooth, intuitive sorting experience that complements filtering.
+- 	Analytics Team — needs to track sorting behavior to understand user preferences.
+- 	Security Team — requires that only authenticated users can view program data.
 
 ## Preconditions
-• 	User is authenticated.
-• 	User is on the Exercise Programs page (UC‑EP‑01).
-• 	System has available program metadata (difficulty, duration, name, popularity).
+- 	User is authenticated.
+- 	User is on the Exercise Programs page (UC‑EP‑01).
+- 	System has available program metadata (difficulty, duration, name, popularity).
 
 ## Postconditions
 Success
-• 	System displays the program list sorted according to the selected criteria.
+- 	System displays the program list sorted according to the selected criteria.
 Failure
-• 	System displays an error message if sorting fails.
-• 	User remains on the Exercise Programs page.
+- 	System displays an error message if sorting fails.
+- 	User remains on the Exercise Programs page.
 
 ## Trigger
 User selects a Sort By option (e.g., Difficulty, Duration, A–Z, Popularity).
@@ -52,36 +52,36 @@ Main Success Scenario (Basic Flow)
 
 Alternate Flows
 A1 — User Changes Sorting Option
-• 	User selects a different sort option.
-• 	System reapplies sorting and updates the list.
+- 	User selects a different sort option.
+- 	System reapplies sorting and updates the list.
 A2 — User Clears Sorting
-• 	User selects Reset or Default Sort.
-• 	System restores the default program order.
+- 	User selects Reset or Default Sort.
+- 	System restores the default program order.
 
 Exception Flows
 E1 — Authentication Failure
-• 	Step 2 fails.
-• 	System redirects user to Login page.
+- 	Step 2 fails.
+- 	System redirects user to Login page.
 (BR‑EP‑05)
 E2 — Sorting Error
-• 	Step 3 or 4 fails due to system/database issue.
-• 	System displays an error message.
+- 	Step 3 or 4 fails due to system/database issue.
+- 	System displays an error message.
 (BR‑EP‑01 fallback)
-• 	User remains on the Exercise Programs page.
+- 	User remains on the Exercise Programs page.
 
 Non‑Functional Requirements
-• 	Security: Only authenticated users may sort programs. (BR‑EP‑05)
-• 	Performance: Sorting must occur instantly or near‑instantly.
-• 	Responsive UI: Sort controls must render correctly on all device sizes.
-• 	Accessibility: Sort controls must support keyboard navigation and screen readers. (SRS‑A11Y‑01)
-• 	Analytics: Sorting events must be logged.
+- 	Security: Only authenticated users may sort programs. (BR‑EP‑05)
+- 	Performance: Sorting must occur instantly or near‑instantly.
+- 	Responsive UI: Sort controls must render correctly on all device sizes.
+- 	Accessibility: Sort controls must support keyboard navigation and screen readers. (SRS‑A11Y‑01)
+- 	Analytics: Sorting events must be logged.
 
 Related UI Screens
-• 	UIS‑EP‑01 — Program List Page
-• 	UIS‑EP‑07 — Sort Controls
-• 	UIS‑EP‑02 — Program Card Layout
-• 	UIS‑GLOBAL‑HEADER‑01
-• 	UIS‑GLOBAL‑FOOTER‑01
+- 	UIS‑EP‑01 — Program List Page
+- 	UIS‑EP‑07 — Sort Controls
+- 	UIS‑EP‑02 — Program Card Layout
+- 	UIS‑GLOBAL‑HEADER‑01
+- 	UIS‑GLOBAL‑FOOTER‑01
 
 ## flowchart TD
 

@@ -13,24 +13,24 @@ To allow an authenticated user to view detailed information about a selected exe
 ## Primary Actor
 Authenticated User
 ## Stakeholders & Interests
-• 	User — wants to understand what a program includes before committing to it.
-• 	System — must retrieve accurate program details and present them clearly.
-• 	Product Owner — wants an intuitive, informative program detail experience.
-• 	Security Team — requires that only authenticated users can view program data.
-• 	Analytics Team — needs to track program detail views.
+- 	User — wants to understand what a program includes before committing to it.
+- 	System — must retrieve accurate program details and present them clearly.
+- 	Product Owner — wants an intuitive, informative program detail experience.
+- 	Security Team — requires that only authenticated users can view program data.
+- 	Analytics Team — needs to track program detail views.
 
 ## Preconditions
-• 	User is authenticated.
-• 	User selected a program from the Program List (UC‑EP‑01).
-• 	System can retrieve program detail data (weeks, days, exercises).
+- 	User is authenticated.
+- 	User selected a program from the Program List (UC‑EP‑01).
+- 	System can retrieve program detail data (weeks, days, exercises).
 
 ## Postconditions
 Success
-• 	System displays the selected program’s full details.
-• 	User may choose to activate the program (UC‑EP‑03).
+- 	System displays the selected program’s full details.
+- 	User may choose to activate the program (UC‑EP‑03).
 Failure
-• 	System displays an error message if program details cannot be retrieved.
-• 	User remains on the Program Detail page.
+- 	System displays an error message if program details cannot be retrieved.
+- 	User remains on the Program Detail page.
 
 ## Trigger
 User selects a program from the Exercise Programs list.
@@ -41,19 +41,19 @@ User selects a program from the Exercise Programs list.
 2. 	System verifies that the user is authenticated.
 (BR‑EP‑05)
 3. 	System retrieves the selected program’s metadata:
-• 	Program name
-• 	Duration (weeks)
-• 	Goals
-• 	Difficulty level
+- 	Program name
+- 	Duration (weeks)
+- 	Goals
+- 	Difficulty level
 (BR‑EP‑02)
 4. 	System retrieves the program’s weekly structure.
 (BR‑EP‑02)
 5. 	System retrieves the daily workout breakdown for each week.
 (BR‑EP‑02)
 6. 	System displays the Program Detail page with:
-• 	Program overview
-• 	Weekly layout
-• 	Daily workout previews
+- 	Program overview
+- 	Weekly layout
+- 	Daily workout previews
 (BR‑EP‑02)
 7. 	System displays an Activate Program button.
 (BR‑EP‑04)
@@ -64,34 +64,34 @@ User selects a program from the Exercise Programs list.
 
 ## Alternate Flows
 A1 — User Views Program Detail but Does Not Activate
-• 	Steps 1–6 occur.
-• 	User leaves the page or navigates elsewhere.
-• 	No activation occurs.
+- 	Steps 1–6 occur.
+- 	User leaves the page or navigates elsewhere.
+- 	No activation occurs.
 
 ## Exception Flows
 E1 — Authentication Failure
-• 	Step 2 fails.
-• 	System redirects user to Login page.
+- 	Step 2 fails.
+- 	System redirects user to Login page.
 (BR‑EP‑05)
 E2 — Program Detail Retrieval Error
-• 	Step 3, 4, or 5 fails due to system/database issue.
-• 	System displays an error message.
+- 	Step 3, 4, or 5 fails due to system/database issue.
+- 	System displays an error message.
 (BR‑EP‑01 fallback)
-• 	User remains on the Program Detail page.
+- 	User remains on the Program Detail page.
 
 ## Non‑Functional Requirements
-• 	Security: Only authenticated users may view program details. (BR‑EP‑05)
-• 	Performance: Program detail must load quickly.
-• 	Responsive UI: Program detail layout must render correctly on all device sizes.
-• 	Accessibility: All program detail elements must support keyboard navigation and screen readers. (SRS‑A11Y‑01)
-• 	Analytics: Program detail view events must be logged.
+- 	Security: Only authenticated users may view program details. (BR‑EP‑05)
+- 	Performance: Program detail must load quickly.
+- 	Responsive UI: Program detail layout must render correctly on all device sizes.
+- 	Accessibility: All program detail elements must support keyboard navigation and screen readers. (SRS‑A11Y‑01)
+- 	Analytics: Program detail view events must be logged.
 
 ## Related UI Screens
-• 	UIS‑EP‑03 — Program Detail Page
-• 	UIS‑EP‑04 — Weekly Layout
-• 	UIS‑EP‑05 — Daily Workout Preview
-• 	UIS‑GLOBAL‑HEADER‑01
-• 	UIS‑GLOBAL‑FOOTER‑01
+- 	UIS‑EP‑03 — Program Detail Page
+- 	UIS‑EP‑04 — Weekly Layout
+- 	UIS‑EP‑05 — Daily Workout Preview
+- 	UIS‑GLOBAL‑HEADER‑01
+- 	UIS‑GLOBAL‑FOOTER‑01
 
 ## flowchart TD
 
