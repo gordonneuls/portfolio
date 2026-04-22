@@ -1,0 +1,9 @@
+# UC‑GLOBAL‑05 — Global Error Handling
+## Purpose: 
+Provide consistent error handling across all modules.
+## Includes:
+-	API failures
+-	Network errors
+-	Missing/corrupted data
+-	Standard error banner
+-	Retry logic
