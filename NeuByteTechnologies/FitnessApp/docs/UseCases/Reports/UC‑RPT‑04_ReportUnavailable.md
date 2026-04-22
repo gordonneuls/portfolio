@@ -13,26 +13,26 @@ To define how the system responds when a user attempts to access a report that i
 Authenticated User
 
 ## Stakeholders & Interests
-• 	User — wants to understand why a report cannot be accessed and what to do next.
-• 	System — must detect unavailability conditions and provide a graceful fallback.
-• 	Product Owner — wants predictable, user‑friendly error handling.
-• 	UX/UI Team — requires consistent error states and messaging patterns.
-• 	Analytics Team — tracks report failures for monitoring and improvement.
-• 	Security Team — ensures restricted reports do not leak information.
+- 	User — wants to understand why a report cannot be accessed and what to do next.
+- 	System — must detect unavailability conditions and provide a graceful fallback.
+- 	Product Owner — wants predictable, user‑friendly error handling.
+- 	UX/UI Team — requires consistent error states and messaging patterns.
+- 	Analytics Team — tracks report failures for monitoring and improvement.
+- 	Security Team — ensures restricted reports do not leak information.
 
 ## Preconditions
-• 	User is authenticated.
-• 	User has selected a report from the Report List (UC‑RPT‑02).
-• 	System attempts to load the report metadata or Power BI embed.
+- 	User is authenticated.
+- 	User has selected a report from the Report List (UC‑RPT‑02).
+- 	System attempts to load the report metadata or Power BI embed.
 
 ## Postconditions
 Success (Handled Failure)
-• 	System displays a clear “Report Unavailable” message.
-• 	User is informed of the reason (if appropriate).
-• 	User is provided with navigation options (Back to Report List, Retry).
+- 	System displays a clear “Report Unavailable” message.
+- 	User is informed of the reason (if appropriate).
+- 	User is provided with navigation options (Back to Report List, Retry).
 Failure (Unhandled Failure)
-• 	System logs the error.
-• 	User may see a generic fallback message.
+- 	System logs the error.
+- 	User may see a generic fallback message.
 
 ## Trigger
 System detects that the selected report cannot be loaded.
@@ -43,18 +43,18 @@ System detects that the selected report cannot be loaded.
 2. 	System attempts to load the report metadata or Power BI embed.
 (FS‑RPT‑DETAIL‑01)
 3. 	System detects that the report is unavailable due to one of the following:
-• 	Report has been removed
-• 	Report is temporarily offline
-• 	Power BI dataset is unavailable
-• 	Report is deprecated
-• 	Report is under maintenance
+- 	Report has been removed
+- 	Report is temporarily offline
+- 	Power BI dataset is unavailable
+- 	Report is deprecated
+- 	Report is under maintenance
 (BR‑RPT‑11)
 4. 	System prevents the report viewer from loading.
 5. 	System displays the Report Unavailable screen, including:
-• 	Report title (if known)
-• 	Clear error message
-• 	Optional reason (if appropriate)
-• 	“Back to Reports” button
+- 	Report title (if known)
+- 	Clear error message
+- 	Optional reason (if appropriate)
+- 	“Back to Reports” button
 (UIS‑RPT‑03)
 6. 	System logs the unavailability event for monitoring.
 (SRS‑LOG‑02)
@@ -62,47 +62,47 @@ System detects that the selected report cannot be loaded.
 
 ## Alternate Flows
 A1 — Report Temporarily Offline
-• 	System displays:
+- 	System displays:
 “This report is temporarily unavailable. Please try again later.”
-• 	User may retry.
+- 	User may retry.
 A2 — Report Deprecated
-• 	System displays:
+- 	System displays:
 “This report is no longer supported.”
-• 	System may show a link to a replacement report.
+- 	System may show a link to a replacement report.
 A3 — Report Removed
-• 	System displays:
+- 	System displays:
 “This report is no longer available.”
-• 	Report may be removed from the list on next refresh.
+- 	Report may be removed from the list on next refresh.
 A4 — Power BI Service Outage
-• 	System displays:
+- 	System displays:
 “Power BI is currently unavailable.”
-• 	User may retry or return to the Report List.
+- 	User may retry or return to the Report List.
 
 ## Exception Flows
 E1 — Report Metadata Missing
-• 	System cannot retrieve report metadata.
-• 	System displays a generic fallback:
+- 	System cannot retrieve report metadata.
+- 	System displays a generic fallback:
 “Unable to load this report.”
-• 	System logs the event.
+- 	System logs the event.
 E2 — Unauthorized Access (Handled Separately)
 If the issue is access‑related, system triggers UC‑RPT‑05_ReportAccessDenied instead.
 E3 — Network Timeout
-• 	System displays:
+- 	System displays:
 “Network issue. Please try again.”
 
 ## Non‑Functional Requirements
-• 	Performance: Error state must display within 150ms after failure detection.
-• 	Reliability: System must handle all Power BI and metadata failures gracefully.
-• 	Security: Error messages must not reveal sensitive internal details.
-• 	Accessibility: Error screen must support keyboard navigation and ARIA labels.
-• 	Consistency: Error messaging must follow global UI patterns.
+- 	Performance: Error state must display within 150ms after failure detection.
+- 	Reliability: System must handle all Power BI and metadata failures gracefully.
+- 	Security: Error messages must not reveal sensitive internal details.
+- 	Accessibility: Error screen must support keyboard navigation and ARIA labels.
+- 	Consistency: Error messaging must follow global UI patterns.
 
 ## Related UI Screens
-• 	UIS‑RPT‑01 — Report List Page
-• 	UIS‑RPT‑02 — Report Detail Page
-• 	UIS‑RPT‑03 — Report Unavailable Screen
-• 	UIS‑GLOBAL‑HEADER‑01
-• 	UIS‑GLOBAL‑FOOTER‑01
+- 	UIS‑RPT‑01 — Report List Page
+- 	UIS‑RPT‑02 — Report Detail Page
+- 	UIS‑RPT‑03 — Report Unavailable Screen
+- 	UIS‑GLOBAL‑HEADER‑01
+- 	UIS‑GLOBAL‑FOOTER‑01
 
 ## Flowchart TD
     A[User Selects Report] --> B[Attempt to Load Report]

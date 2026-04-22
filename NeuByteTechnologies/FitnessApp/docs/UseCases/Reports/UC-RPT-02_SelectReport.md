@@ -11,28 +11,28 @@ Reports
 ## Primary Actor
 Authenticated User
 ## Stakeholders & Interests
-• 	User — wants to open a report and view insights quickly.
-• 	System — must load the correct report and pass the correct embed URL or token.
-• 	Product Owner — wants a smooth, intuitive reporting experience.
-• 	UX/UI Team — requires consistent navigation and loading states.
-• 	Analytics Team — tracks which reports users open.
-• 	Security Team — ensures users only access reports they are authorized to view.
+- 	User — wants to open a report and view insights quickly.
+- 	System — must load the correct report and pass the correct embed URL or token.
+- 	Product Owner — wants a smooth, intuitive reporting experience.
+- 	UX/UI Team — requires consistent navigation and loading states.
+- 	Analytics Team — tracks which reports users open.
+- 	Security Team — ensures users only access reports they are authorized to view.
 
 ## Preconditions
-• 	User is authenticated.
-• 	Report List is displayed (UC‑RPT‑01).
-• 	Selected report exists and is available to the user.
-• 	Power BI embed configuration is valid.
+- 	User is authenticated.
+- 	Report List is displayed (UC‑RPT‑01).
+- 	Selected report exists and is available to the user.
+- 	Power BI embed configuration is valid.
 
 ## Postconditions
 Success
-• 	System loads the selected report’s metadata.
-• 	System opens the Report Detail screen.
-• 	Power BI report loads in the embedded viewer.
-• 	User can interact with the report using Power BI’s built‑in features.
+- 	System loads the selected report’s metadata.
+- 	System opens the Report Detail screen.
+- 	Power BI report loads in the embedded viewer.
+- 	User can interact with the report using Power BI’s built‑in features.
 Failure
-• 	Report does not load.
-• 	System may display an error message.
+- 	Report does not load.
+- 	System may display an error message.
 
 ## Trigger
 User selects a report card from the Report List.
@@ -43,10 +43,10 @@ User selects a report card from the Report List.
 2. 	System receives the request to load the selected report.
 (FS‑RPT‑DETAIL‑01)
 3. 	System retrieves the report metadata, including:
-• 	Report ID
-• 	Report title
-• 	Report description
-• 	Power BI embed URL or Publish‑to‑Web URL
+- 	Report ID
+- 	Report title
+- 	Report description
+- 	Power BI embed URL or Publish‑to‑Web URL
 (BR‑RPT‑02 → BR‑RPT‑06)
 4. 	System validates that the user has access to the report.
 (BR‑RPT‑10)
@@ -60,48 +60,48 @@ User selects a report card from the Report List.
 
 ## Alternate Flows
 A1 — Report Requires Authentication Token (Embed Mode)
-• 	System retrieves a Power BI embed token.
-• 	System injects the token into the viewer.
-• 	Report loads normally.
+- 	System retrieves a Power BI embed token.
+- 	System injects the token into the viewer.
+- 	Report loads normally.
 A2 — Report Uses Publish‑to‑Web
-• 	System loads the public embed URL.
-• 	No authentication token is required.
+- 	System loads the public embed URL.
+- 	No authentication token is required.
 A3 — Report Has a Data Freshness Warning
-• 	System displays a badge or message (optional):
+- 	System displays a badge or message (optional):
 “Last refreshed: 2 days ago.”
 
 ## Exception Flows
 E1 — Report Not Found
-• 	Report ID is invalid or missing.
-• 	System displays:
+- 	Report ID is invalid or missing.
+- 	System displays:
 “This report is no longer available.”
-• 	System logs the event.
+- 	System logs the event.
 E2 — Unauthorized Access
-• 	User attempts to open a restricted report.
-• 	System blocks access and logs a security event.
+- 	User attempts to open a restricted report.
+- 	System blocks access and logs a security event.
 (BR‑RPT‑10)
 E3 — Power BI Embed Failure
-• 	Power BI viewer fails to load.
-• 	System displays:
+- 	Power BI viewer fails to load.
+- 	System displays:
 “Unable to load report. Please try again.”
-• 	System logs the failure.
+- 	System logs the failure.
 E4 — Network Timeout
-• 	System cannot load the report.
-• 	UI may retry or show fallback messaging.
+- 	System cannot load the report.
+- 	UI may retry or show fallback messaging.
 
 ## Non‑Functional Requirements
-• 	Performance: Report metadata must load within 200ms.
-• 	Security: Only authorized users may access reports.
-• 	Reliability: Embed URLs and tokens must be valid and refreshed as needed.
-• 	Accessibility: Report Detail screen must support keyboard navigation and ARIA labels.
-• 	Responsiveness: Power BI viewer must adapt to mobile, tablet, and desktop.
-• 	Consistency: Navigation must match the rest of the Reports module.
+- 	Performance: Report metadata must load within 200ms.
+- 	Security: Only authorized users may access reports.
+- 	Reliability: Embed URLs and tokens must be valid and refreshed as needed.
+- 	Accessibility: Report Detail screen must support keyboard navigation and ARIA labels.
+- 	Responsiveness: Power BI viewer must adapt to mobile, tablet, and desktop.
+- 	Consistency: Navigation must match the rest of the Reports module.
 
 ## Related UI Screens
-• 	UIS‑RPT‑01 — Report List Page
-• 	UIS‑RPT‑02 — Report Detail Page
-• 	UIS‑GLOBAL‑HEADER‑01
-• 	UIS‑GLOBAL‑FOOTER‑01
+- 	UIS‑RPT‑01 — Report List Page
+- 	UIS‑RPT‑02 — Report Detail Page
+- 	UIS‑GLOBAL‑HEADER‑01
+- 	UIS‑GLOBAL‑FOOTER‑01
 
 ## Flowchart TD
 
