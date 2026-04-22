@@ -4,54 +4,54 @@ This module supports the user’s ability to resolve issues independently and un
 
 ## Table of Contents
 Use Cases
-• 	UC‑HELP‑01 — View Help Page
+-	UC‑HELP‑01 — View Help Page
 Displays the Help landing page with links to FAQs, policies, troubleshooting tips, and support contact information.
-• 	UC‑HELP‑02 — Contact Support
+-	UC‑HELP‑02 — Contact Support
 Allows users to initiate a support request via email, including pre‑populated metadata such as app version and device information.
-• 	UC‑HELP‑03 — View FAQ
+-	UC‑HELP‑03 — View FAQ
 Displays a list of frequently asked questions with expandable answers.
-• 	UC‑HELP‑04 — View Policies
+-	UC‑HELP‑04 — View Policies
 Displays static policy documents such as Privacy Policy and Terms of Service.
 (Additional Help UCs may be added as the module expands — e.g., Troubleshooting Guides, Support Ticket History, or In‑App Tutorials.)
 
 ## Purpose of This Module
 ## The Help module provides:
-• 	A centralized location for self‑service support resources
-• 	A consistent user experience for accessing FAQs, policies, and support contact options
-• 	A foundation for future enhancements such as:
-• 	In‑app tutorials
-• 	Contextual help
-• 	Searchable help content
-• 	Support ticket integration
-• 	A traceability anchor for BR‑HELP‑01 → BR‑HELP‑15 and related functional/UI specifications
-• 	A clean separation between static content, support actions, and navigation flows
+-	A centralized location for self‑service support resources
+-	A consistent user experience for accessing FAQs, policies, and support contact options
+-	A foundation for future enhancements such as:
+-	In‑app tutorials
+-	Contextual help
+-	Searchable help content
+-	Support ticket integration
+-	A traceability anchor for BR‑HELP‑01 → BR‑HELP‑15 and related functional/UI specifications
+-	A clean separation between static content, support actions, and navigation flows
 
 ## Relationship to Other Modules
 The Help module interacts with:
 ## Login Module
-• 	Provides access to policies from the Login page
-• 	Supports users who need help logging in or resetting passwords
+-	Provides access to policies from the Login page
+-	Supports users who need help logging in or resetting passwords
 ## Dashboard Module
-• 	Provides quick access to Help from global navigation
+-	Provides quick access to Help from global navigation
 ## Support / Email Subsystem
-• 	Sends support emails with metadata
-• 	Handles fallback behavior when email clients are unavailable
+-	Sends support emails with metadata
+-	Handles fallback behavior when email clients are unavailable
 ## Content Management (future)
-• 	Allows updating FAQs and policies without code changes
+-	Allows updating FAQs and policies without code changes
 
 ## Document Conventions
-• 	All files follow the naming pattern: UC-Help-XX-<Name>.md
-• 	All UCs include:
-• 	Purpose
-• 	Preconditions
-• 	Postconditions
-• 	Main Flow
-• 	Alternate Flows
-• 	Exception Flows
-• 	Non‑Functional Requirements
-• 	Related UI Screens
-• 	Mermaid Flow Diagram
-• 	Traceability Table
-• 	Markdown is optimized for GitHub readability.
-• 	Each UC is modular and self‑contained.
-• 	This folder is structured for reviewer accessibility, traceability, and clean separation of concerns.
+-	All files follow the naming pattern: UC-Help-XX-<Name>.md
+-	All UCs include:
+-	Purpose
+-	Preconditions
+-	Postconditions
+-	Main Flow
+-	Alternate Flows
+-	Exception Flows
+-	Non‑Functional Requirements
+-	Related UI Screens
+-	Mermaid Flow Diagram
+-	Traceability Table
+-	Markdown is optimized for GitHub readability.
+-	Each UC is modular and self‑contained.
+-	This folder is structured for reviewer accessibility, traceability, and clean separation of concerns.
