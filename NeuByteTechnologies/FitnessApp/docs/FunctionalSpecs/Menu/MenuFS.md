@@ -52,13 +52,14 @@ Maps to: BR‑MENU‑03, UC‑MENU‑02
 FR‑MENU‑04 — Navigation Items
 Description:
 The system shall display the following navigation items in the defined order:
-1. 	Dashboard
-2. 	Programs
-3. 	Log Workout
-4. 	Weight Tracking
-5. 	Reports
-6. 	Help
-7. 	Logout
+1. Dashboard
+2. Exercise Programs
+3. Log Workout
+4. Weight Tracking
+5. Reports
+6. Profile
+8. Help
+9. 	Logout
 Details:
 - 	Each item must be keyboard‑focusable.
 - 	Each item must include a semantic role and accessible label.
