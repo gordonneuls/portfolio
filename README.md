@@ -17,7 +17,7 @@ As I have been a heavy SQL Server Integration Services programmer Python came in
 ### Azure
 Azure has so many possibilities starting with the Hosting of a MySQL database. Because this is a portfilio project I went with the lower cost database instead of stayiong with my comfort zosne and the Azure SQL Database. 
 
-The APIs will be hosted in Azure because direct daabase access poses problems.
+The APIs will be hosted in Azure because direct database access poses problems.
 
 Reporting Models that support Power BI reports will have Pipelines to refresh the data on a schedule likely set to daily for now.
 
